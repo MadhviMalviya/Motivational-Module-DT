@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Know?</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<div class="knw-container" id="doYouKnowContainer">
+  <span class="close-btn" onclick="closeDoYouKnow()">X</span>
+  <h2>💡Did You Know?</h2>
+  <p> The world's first website is still online? Tim Berners-Lee created the first website on August 6, 1991, and it's still accessible today. The website's address is <span style="color: blue;">info.cern.ch.</span> </p>
+</div>
+
+<div class="btn">
+<button onclick="openDoYouKnow()">Quick facts</button>
+</div>
+
+
+<script>
+  function openDoYouKnow() {
+    var container = document.getElementById("doYouKnowContainer");
+    container.style.display = "block";
+  }
+  function closeDoYouKnow() {
+    var container = document.getElementById("doYouKnowContainer");
+    container.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

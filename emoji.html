@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotion Scale</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .container {
+      text-align: center;
+    }
+    .scale {
+      display: flex;
+      justify-content: space-between;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .emoji-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Session Video</h1>
+    <video controls>
+      <source src="your_video.mp4" type="video/mp4">
+      <!--  -->
+    </video>
+    <div class="emoji-bar" id="emotionScale">
+      <span>😢</span>
+      <span>😞</span>
+      <span>😐</span>
+      <span>🙂</span>
+      <span>😊</span>
+      <span>😀</span>
+      <span>😄</span>
+      <span>😃</span>
+      <span>😁</span>
+      <span>😆</span>
+    </div>
+    <div class="feedback">
+      <h2>How satisfied are you with this video?</h2>
+      <input type="range" min="1" max="10" value="5" class="slider" id="emotionRange">
+      <span id="emotionValue">😐</span>
+    </div>
+    <div id="feedbackForm" style="display: none;">
+      <label for="feedbackInput">Why did you mark this?</label>
+      <input type="text" id="feedbackInput">
+      <button onclick="submitFeedback()">Submit</button>
+    </div>
+    <div id="successMessage" style="display: none;">
+      <h2 id="successHeading">You are on the way to success!</h2>
+    </div>
+  </div>
+
+  <script>
+    const emotionValue = document.getElementById('emotionValue');
+    const feedbackForm = document.getElementById('feedbackForm');
+    const successMessage = document.getElementById('successMessage');
+    const successHeading = document.getElementById('successHeading');
+    const emotionRange = document.getElementById('emotionRange');
+    const emojis = ['😢', '😞', '😐', '🙂', '😊', '😀', '😄', '😃', '😁', '😆'];
+
+    emotionRange.addEventListener('input', function() {
+      const value = emotionRange.value;
+      emotionValue.textContent = emojis[value - 1];
+      updateFeedbackForm(value);
+    });
+
+    function updateFeedbackForm(value) {
+      if (value < 5) {
+        feedbackForm.style.display = 'block';
+        successMessage.style.display = 'none';
+      } else {
+        feedbackForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        if (value == 5) {
+          successHeading.textContent = 'You are doing well!';
+        } else if (value == 6) {
+          successHeading.textContent = 'Great job!';
+        } else if (value >= 7 && value <= 10) {
+          successHeading.textContent = 'Keep up the excellent work!';
+        }
+      }
+    }
+
+    function submitFeedback() {
+      const feedbackInput = document.getElementById('feedbackInput').value;
+      console.log('Feedback submitted:', feedbackInput);
+      window.location.href='new.html'
+    }
+  </script>
+</body>
+</html>

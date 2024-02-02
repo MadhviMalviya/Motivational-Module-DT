@@ -1,0 +1,10 @@
+// dry run: 
+
+
+// logic
+
+// (if emotion<=5){
+//     return ('redirect to other page')
+// }else {
+//     return ('congrats!  you are on a right path')
+// }

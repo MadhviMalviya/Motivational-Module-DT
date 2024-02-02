@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Slider</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div id="questionSlider" class="carousel slide" data-ride="carousel">
+
+      <div class="carousel-inner">
+
+        <!--  1 -->
+        <div class="carousel-item active">
+          <h2>Q.1.What awaits you at the finish line of this course?</h2>
+          <div class="options">
+            <div class="opt-img">
+            <img src="Graduation-rafiki.png" alt="Option 1" onclick="nextQuestion()">
+            <h3>1</h3>
+          </div>
+           
+          <div class="opt-img">
+            <img src="Success factors-rafiki.png" alt="Option 2" onclick="nextQuestion()">
+            <h3>2</h3>
+          </div>
+          </div>
+        </div>
+
+        <!--  2 -->
+        <div class="carousel-item">
+          <h2>Q.2.What's the cost of not taking action today?</h2>
+          <div class="options">
+            <div class="opt-img">
+            <img src="Lost-amico.png" alt="Opt 2" onclick="nextQuestion()">
+            <h3>1</h3>
+          </div>
+            <div class="opt-img">
+            <img src="Time management-rafiki.png" alt="Opt1" onclick="nextQuestion()">
+            <h3>2</h3>
+          </div>
+        </div>
+        </div>
+
+
+        <!--  3 -->
+        <div class="carousel-item">
+          <h2>Q.3.Imagine the skills you'll gain – what does success look like for you?</h2>
+          <div class="options">
+            <div class="opt-img">
+            <img src="Money motivation-rafiki.png" alt="Opt 1" onclick="submitQuiz()">
+            <h3>1</h3>
+          </div>
+            <div class="opt-img">
+            <img src="Growing-rafiki.png" alt="Opt 2" onclick="submitQuiz()">
+            <h3>2</h3>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <a class="carousel-control-prev" href="#questionSlider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#questionSlider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+ 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+
+

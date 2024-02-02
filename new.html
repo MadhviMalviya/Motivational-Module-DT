@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .question {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .option {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    .option img {
+      width: 300px;
+      height: 300px;
+      margin: 20px;
+      border-radius: 5%;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+    .options img:hover {
+  transform: scale(1.1);
+}
+
+    h1 {
+        
+      margin-top: 40px;
+    }
+    .success-message {
+      font-size: 24px;
+      font-weight: bold;
+      color:blue;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="question active" id="question1">
+      <h1>Q.1. What awaits you at the finish line of this course?</h1>
+      <div class="options">
+        <div class="option" onclick="showNextQuestion('question2')">
+          <img src="https://sudharsanartsedu.com/wp-content/uploads/2022/03/Graduation-rafiki-1536x1536.png" alt="Option 1">
+        </div>
+        <div class="option" onclick="showNextQuestion('question2')">
+          <img src="https://www.vitaliberta.hk/wp-content/uploads/2023/09/5285621_Artboard-1.svg" alt="Option 2">
+        </div>
+      </div>
+    </div>
+    <div class="question" id="question2">
+      <h1>Q.2. What's the cost of not taking action today?</h1>
+      <div class="options">
+        <div class="option" onclick="showNextQuestion('question3')">
+          <img src="https://img.freepik.com/free-vector/lost-concept-illustration_114360-1124.jpg?w=740&t=st=1706852826~exp=1706853426~hmac=3e7d145b9bbef2a392343b40b1deebc9fe6fd45054432696f2b363827f7e68f1" alt="Option 1">
+        </div>
+        <div class="option" onclick="showNextQuestion('question3')">
+          <img src="https://www.vigindustries.in/images/time.jpg" alt="Option 2">
+        </div>
+      </div>
+    </div>
+    <div class="question" id="question3">
+      <h1>Q.3. Imagine the skills you'll gain – what does success look like for you?</h1>
+      <div class="options">
+        <div class="option" onclick="showSuccessMessage()">
+          <img src="https://shopney.co/blog/content/images/2022/12/13591868_5300635--1-.jpg" alt="Option 1">
+        </div>
+        <div class="option" onclick="showSuccessMessage()">
+          <img src="https://img.freepik.com/free-vector/growing-concept-illustration_114360-336.jpg?w=740&t=st=1706853813~exp=1706854413~hmac=b9ac02aa323980e73c961cfbfbf18c6fdfc25d71e847cdef9c2b031e9b7981d0" alt="Option 2">
+        </div>
+      </div>
+    </div>
+    <div class="success-message" id="successMessage" style="display: none;">
+    <h1>  Congratulations! You are on the way to success. </h1>
+
+      <img src="https://img.freepik.com/free-vector/successful-business-man-with-trophy_1150-35038.jpg?w=740&t=st=1706854696~exp=1706855296~hmac=6a23603958e132a846c215b97101e3f24683eef79bd496f2db2b277d4cf473a8" alt="img"/>
+      <!-- <img src="https://img.freepik.com/premium-vector/inspiration-success-flat-vector-modern-illustration_566886-8963.jpg?w=740" alt="img"/> -->
+    </div>
+  </div>
+
+  <script>
+    function showNextQuestion(questionId) {
+     
+      document.querySelector('.question.active').classList.remove('active');
+     
+      document.getElementById(questionId).classList.add('active');
+    }
+
+    function showSuccessMessage() {
+     
+      document.querySelector('.question.active').classList.remove('active');
+    
+      document.getElementById('successMessage').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
